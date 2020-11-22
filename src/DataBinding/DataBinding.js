@@ -12,8 +12,7 @@ export default function DataBinding() {
     // binding function
     const renderImg = () => {
         // giá trị trả về 1 chuỗi ,số, jsx 
-        return 
-        <div>
+        return <div>
             <h3>Hình Ảnh</h3>
             <img src={SinhVien.hinhAnh} height='200' width='200' />
         </div>
