@@ -1,5 +1,6 @@
- import './App.css';
+import './App.css';
 import BaiTapLLayout from './Components/BaiTapLayout/BaiTapLLayout';
+import BaiTapThucHanhLayout from './Components/BaiTapThucHanhLayout/BaiTapThucHanhLayout';
 import DemoFunctionComponent from './Components/DemoFunctionComponent';
 import DemoReactClassComponent from './Components/DemoReactClassComponent';
 import DataBinding from './DataBinding/DataBinding';
@@ -7,7 +8,7 @@ import DataBinding from './DataBinding/DataBinding';
 function App() {
   return (
     <div className="App">
-        <DataBinding></DataBinding>,
+     <BaiTapThucHanhLayout></BaiTapThucHanhLayout>
 
     </div>
   );
