@@ -6,11 +6,12 @@ import DemoReactClassComponent from './Components/DemoReactClassComponent';
 import DataBinding from './DataBinding/DataBinding';
 import DemoProps from './Props/DemoProps';
 import ProductListRCC from './Props/ProductListRCC';
+import PropsWithEvent from './Props/PropsWithEvent';
 
 function App() {
   return (
     <div className="App">
-        <ProductListRCC></ProductListRCC>
+        <PropsWithEvent/>
 
     </div>
   );
