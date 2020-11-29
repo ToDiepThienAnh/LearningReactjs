@@ -1,45 +1,67 @@
 import React, { Component } from 'react'
 import productlist from '../data/productlist.json'
+import Product from './Product'
+import GioHang from './GioHang'
 
 
 export default class ProductList extends Component {
 
 
     state = {
-        productDetail: productlist[0]
+        productDetail: productlist[0],
+        cart: [
+            // {
+            //     maSP: 1,
+            //     tenSP: "VinSmart Live",
+            //     soLuong: 1,
+            //     donGia: 5700000,
+            //     hinhAnh: "./img/sp_vivo850.png"
+            // },
+            
+        ]
     }
 
     renderProductList = () => {
         return productlist.map((product, index) => {
-            return <div className='col-4' key={index}>
-                <div className="card">
-                    <img className="card-img-top" style={{ height: 300 }} src={product.hinhAnh} alt />
-                    <div className="card-body">
-                        <h4 className="text-center card-title">{product.tenSP}</h4>
-
-                        <div className="w-100 text-center">
-
-                            <button className="text-center btn btn-success" onClick={ ()=> this.viewDetailProduct(product)}>Xem chi tiết</button>
-
-                        </div>
-                        {/* <button className="text-center w-100 btn btn-success">Xem chi tiết</button> */}
-                    </div>
-                </div>
-            </div>
+            return <Product addToCart={this.addProductToCart} viewDetail={this.viewDetailProduct} sanPham={product} key={index}></Product>
         })
     }
 
     viewDetailProduct = (product) => {
         this.setState({
-            productDetail: product
+            productDetail: product,
+            
         })
     }
 
+    addProductToCart = (product) => {
+        let productUpdate = {...product, soLuong: 1}
+        const index = this.state.cart.findIndex(product => product.maSP === productUpdate.maSP)
+        let newArr = [...this.state.cart];
+        if( index !== -1 ){
+            
+            newArr[index].soLuong++;
+            this.setState({
+                cart:newArr
+            })
+        }
+        else 
+        {
+            newArr.push(productUpdate);
+            this.setState({
+                cart: newArr
+            })
+        }
+      
+    }
+
+
     render() {
-        const { productDetail } = this.state;
+        const { productDetail, cart } = this.state;
 
         return (
             <div className='container'>
+                <GioHang gioHang={cart}></GioHang>
                 <h1 className='text-danger text-center'>Danh sách sản phẩm</h1>
                 <div className='row'>
 

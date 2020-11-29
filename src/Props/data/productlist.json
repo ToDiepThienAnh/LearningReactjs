@@ -8,7 +8,7 @@
       "cameraSau": "Chính 48 MP & Phụ 8 MP, 5 MP",
       "ram": "4 GB",
       "rom": "64 GB",
-      "giaBan": 5700000,
+      "donGia": 5700000,
       "hinhAnh": "./img/sp_vivo850.png"
     },
   
@@ -21,7 +21,7 @@
       "cameraSau": "Chính 48 MP & Phụ 8 MP, 5 MP",
       "ram": "4 GB",
       "rom": "64 GB",
-      "giaBan": 7600000,
+      "donGia": 7600000,
       "hinhAnh": "./img/sp_note7.png"
     },
   
@@ -34,7 +34,7 @@
       "cameraTruoc": "7 MP",
       "ram": "4 GB",
       "rom": "64 GB",
-      "giaBan": 27000000,
+      "donGia": 27000000,
       "hinhAnh": "./img/sp_iphoneX.png"
     }
   ]
