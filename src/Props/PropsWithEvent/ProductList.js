@@ -33,6 +33,33 @@ export default class ProductList extends Component {
             
         })
     }
+    // Định nghĩa hàm thay đổi số lượng tại nơi chứa state( số lượng nằm trong cart[])
+    tangGiamSoLuong = (maSanPham, soluong) => {
+        console.log(maSanPham);
+
+        let gioHangCapNhat = [...this.state.cart]
+        // tìm trong giỏ hàng có sản phẩm mã == sản phẩm đc click + hoặc -
+        let spGioHang = gioHangCapNhat.find(spGH => spGH.maSP === maSanPham)
+        if(spGioHang) {
+            spGioHang.soLuong += soluong;
+        }
+        this.setState({
+            cart: gioHangCapNhat
+        })
+    }
+
+    deleteItem = (maSPClick) => {
+        console.log(maSPClick);
+        
+        let gioHangCapNhat = [...this.state.cart]
+        const index = gioHangCapNhat.findIndex(product => product.maSP === maSPClick)
+        if(index !== -1){
+            gioHangCapNhat.splice(index, 1);
+        }
+        this.setState({
+            cart: gioHangCapNhat
+        })
+    }
 
     addProductToCart = (product) => {
         let productUpdate = {...product, soLuong: 1}
@@ -61,7 +88,7 @@ export default class ProductList extends Component {
 
         return (
             <div className='container'>
-                <GioHang gioHang={cart}></GioHang>
+                <GioHang gioHang={cart} deleteItem={this.deleteItem} tangGiamSoLuong={this.tangGiamSoLuong}></GioHang>
                 <h1 className='text-danger text-center'>Danh sách sản phẩm</h1>
                 <div className='row'>
 
