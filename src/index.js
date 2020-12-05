@@ -5,13 +5,13 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 
 // cấu hình redux
-import {Provider} from 'react-redux';
-import {store} from './Redux/configStore';
+// import {Provider} from 'react-redux';
+// import {store} from './Redux/configStore';
   
 
 ReactDOM.render(
     
-    <Provider store={store}><App /></Provider>,
+    <App></App>,
   document.getElementById('root')
 );
 
