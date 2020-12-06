@@ -1,6 +1,7 @@
 // Đây là file quản lí tất cả state của ứng dụng thay vì đặt tại compoent ta đặt state tại store
 
 import {combineReducers, createStore} from 'redux';
+import { BaiTapGameXucXacReducer } from './BaiTapGameXucXacReducer';
 import { GioHangReducer } from './GioHangReducer';
 
 
@@ -24,7 +25,8 @@ import { GioHangReducer } from './GioHangReducer';
 
 const rootReducer = combineReducers({
     // Các state sau này khai báo tại đây
-    stateGioHang: GioHangReducer
+    stateGioHang: GioHangReducer,
+    stateXucXac: BaiTapGameXucXacReducer
     }
 )
 
