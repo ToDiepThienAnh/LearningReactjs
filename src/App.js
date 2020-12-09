@@ -1,4 +1,5 @@
  import './App.css';
+import BaiTapGameOanTuTi from './BaiTapGameOanTuTi/BaiTapGameOanTuTi';
 import BaiTapGameXucXac from './BaiTapRedux/BaiTapGameXucXac/BaiTapGameXucXac';
 import BaiTapGioHangRedux from './BaiTapRedux/BaiTapGioHangRedux/BaiTapGioHangRedux';
 import BaiTapDanhSachPhim from './Components/BaiTapDanhSachPhim/BaiTapDanhSachPhim';
@@ -10,7 +11,7 @@ import DataBinding from './DataBinding/DataBinding';
 function App() {
   return (
     <div className="App">
-        <BaiTapGameXucXac></BaiTapGameXucXac>
+        <BaiTapGameOanTuTi></BaiTapGameOanTuTi>
 
     </div>
   );
