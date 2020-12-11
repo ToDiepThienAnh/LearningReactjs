@@ -5,6 +5,7 @@ import Computer from './Computer'
 import KetQua from './KetQua'
 import Player from './Player'
 
+
 export default class BaiTapGameOanTuTi extends Component {
     render() {
         return (
@@ -28,4 +29,8 @@ export default class BaiTapGameOanTuTi extends Component {
         )
     }
 }
+
+
+
+
 
