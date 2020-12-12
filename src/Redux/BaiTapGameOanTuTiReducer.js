@@ -5,8 +5,8 @@ const stateDefault = {
         {ma:'bao', hinhAnh: './img/img_keobuabao/bao.png', datCuoc: false}
     ],
     ketQua: 'I am Iron man, I love you 3000 !!!',
-    soBanThang: 11,
-    soBanChoi: 11,
+    soBanThang: 0,
+    soBanChoi: 0,
     computer: {ma:'keo', hinhAnh: './img/img_keobuabao/keo.png'}
 }
 
@@ -47,6 +47,7 @@ export const BaiTapGameOanTuTiReducer = (state= stateDefault, action) => {
                         state.ketQua = 'thua'
                     } else {
                         state.ketQua = 'win'
+                        state.soBanThang +=1
                     }
                     break;
                 case 'bua':
@@ -56,6 +57,7 @@ export const BaiTapGameOanTuTiReducer = (state= stateDefault, action) => {
                         state.ketQua = 'thua'
                     } else {
                         state.ketQua = 'win'
+                        state.soBanThang +=1
                     }
                     break;
                 case 'bao':
@@ -65,11 +67,13 @@ export const BaiTapGameOanTuTiReducer = (state= stateDefault, action) => {
                         state.ketQua = 'thua'
                     } else {
                         state.ketQua = 'win'
+                        state.soBanThang +=1
                     }
                     break;
                 default: state.ketQua = ' win'
                 return {...state}
             }
+            state.soBanChoi +=1
         }
     }
      return {...state}
