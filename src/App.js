@@ -1,4 +1,5 @@
  import './App.css';
+import BaiTapDatVeXemPhim from './BaiTapDatVeXemPhim/BaiTapDatVeXemPhim';
 import BaiTapGameXucXac from './BaiTapRedux/BaiTapGameXucXac/BaiTapGameXucXac';
 import BaiTapGioHangRedux from './BaiTapRedux/BaiTapGioHangRedux/BaiTapGioHangRedux';
 import BaiTapDanhSachPhim from './Components/BaiTapDanhSachPhim/BaiTapDanhSachPhim';
@@ -11,7 +12,7 @@ import BaiTapQuanLiSinhVien from './Form/BaiTapQuanLiSinhVien/BaiTapQuanLiSinhVi
 function App() {
   return (
     <div className="App">
-        <BaiTapQuanLiSinhVien></BaiTapQuanLiSinhVien>
+        <BaiTapDatVeXemPhim></BaiTapDatVeXemPhim>
 
     </div>
   );
