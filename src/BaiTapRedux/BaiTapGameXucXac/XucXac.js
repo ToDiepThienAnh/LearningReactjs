@@ -14,7 +14,7 @@ import {connect} from 'react-redux';
             <div className='container-fluid'>
                 <div className='row text-center mt-5'>
                     <div className='col-4'>
-                        <button className='p-5 btn btn-danger'><span className='display-4'>Tài</span></button>
+                        <button onClick={() => {this.props.chonDatCuoc(true)}} className='p-5 btn btn-danger'><span className='display-4'>Tài</span></button>
                     </div>
                     <div className='col-4'>
                         <div>
@@ -24,7 +24,7 @@ import {connect} from 'react-redux';
                     
                     </div>
                     <div className='col-4'>
-                        <button className='p-5 btn btn-danger'><span className='display-4'>Xỉu</span></button>
+                        <button onClick={() => {this.props.chonDatCuoc(false)}} className='p-5 btn btn-danger'><span className='display-4'>Xỉu</span></button>
                     </div>
                 </div>
 
@@ -39,5 +39,18 @@ const mapStateToProps = (state) => {
     }
 }
 
+const mapDisPatchToProps = (dispach) => {
+    return{
+        chonDatCuoc: (maCuoc)=> {
+            const action = {
+                type: 'DAT_CUOC',
+                maCuoc: maCuoc
+            }
+            dispach(action)
+        }
+        
+    }
+}
 
-export default connect(mapStateToProps)(XucXac);
+
+export default connect(mapStateToProps,mapDisPatchToProps)(XucXac);

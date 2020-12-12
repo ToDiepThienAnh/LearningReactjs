@@ -6,11 +6,12 @@ import BaiTapLLayout from './Components/BaiTapLayout/BaiTapLLayout';
 import DemoFunctionComponent from './Components/DemoFunctionComponent';
 import DemoReactClassComponent from './Components/DemoReactClassComponent';
 import DataBinding from './DataBinding/DataBinding';
+import BaiTapQuanLiSinhVien from './Form/BaiTapQuanLiSinhVien/BaiTapQuanLiSinhVien';
 
 function App() {
   return (
     <div className="App">
-        <BaiTapGameXucXac></BaiTapGameXucXac>
+        <BaiTapQuanLiSinhVien></BaiTapQuanLiSinhVien>
 
     </div>
   );
