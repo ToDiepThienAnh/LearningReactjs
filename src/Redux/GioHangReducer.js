@@ -18,8 +18,7 @@ const stateGioHang = {
 }
 
 export const GioHangReducer= (state= stateGioHang, action) =>{
-    console.log(action);
-    switch(action.type){
+     switch(action.type){
         case 'THEM_GIO_HANG': {
             // Xử lí cập nhật state.gioHang
             let gioHangCapNhat = [...state.gioHang];

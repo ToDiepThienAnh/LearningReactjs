@@ -7,6 +7,7 @@ import DemoFunctionComponent from './Components/DemoFunctionComponent';
 import DemoReactClassComponent from './Components/DemoReactClassComponent';
 import DataBinding from './DataBinding/DataBinding';
 import BaiTapQuanLiSinhVien from './Form/BaiTapQuanLiSinhVien/BaiTapQuanLiSinhVien';
+import React_LifeCycle from './React_LifeCycle/React_LifeCycle';
 
 function App() {
   return (

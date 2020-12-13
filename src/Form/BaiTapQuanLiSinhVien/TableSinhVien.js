@@ -1,7 +1,29 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
+class TableSinhVien extends Component {
 
-export default class TableSinhVien extends Component {
+    renderSinhVien = () => {
+        return this.props.danhSachSinhVien.map((sv, index) => {
+            return <tr key={index}>
+           
+            <td>{sv.maSinhVien}</td>
+            <td>{sv.tenSinhVien}</td>
+            <td>{sv.soDienThoai}</td>
+            <td>{sv.email}</td>
+            <td>
+                <button onClick={ ()=> {this.props.dispatch({
+                    type:'SUA_SINHVIEN',
+                    sinhVienSua: sv
+                })}} className='btn btn-info'>Sửa</button>
+                <button className='ml-2 btn btn-danger'>Xóa</button>
+            </td>
+            
+        </tr>
+        })
+    }
+
     render() {
+
         return (
             <div className='mt-4'>
                 <table className='table'>
@@ -12,21 +34,27 @@ export default class TableSinhVien extends Component {
                             <th>Số Điện Thoại</th>
                             <th>Email</th>
                             <th></th>
-                            <th></th>
+                            
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>adasdasd</td>
-                            <td>adasdasd</td>
-                            <td>adasdasd</td>
-                            <td>adasdasd</td>
-                            <td></td>
-                            <td></td>
-                        </tr>
+                    {this.renderSinhVien()}
                     </tbody>
                 </table>
             </div>
         )
     }
 }
+
+// cú pháp: () => { return {} } like () => ({})
+// const mapStateToProps = (state) => {
+//     return {
+//         danhSachSinhVien: state.stateDanhSachSinhVien.danhSachSinhVien
+//     }
+// }
+
+const mapStateToProps = (state) => ({
+    danhSachSinhVien: state.stateDanhSachSinhVien.danhSachSinhVien
+})
+
+export default connect(mapStateToProps)(TableSinhVien)
