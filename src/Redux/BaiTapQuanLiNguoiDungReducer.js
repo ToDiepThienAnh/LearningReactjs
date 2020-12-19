@@ -1,7 +1,8 @@
 import { DELETE_USERS, EDIT_USERS, SET_USERS, SIGNUP_USERS, UPDATE_USER } from "./Action/type"
 
 const stateDefault = {
-    mangThongTinNguoiDung: [],
+    mangThongTinNguoiDung: [{taiKhoan:"thienanh1412",hoTen:"Tô Diệp Thiên Anh", matKhau:"123456", soDienThoai:"09063372721", email:"123123@gmail.com", loaiNguoiDung:"Nhân viên"},
+    {taiKhoan:"pnt07",hoTen:"Phan Nhật Thịnh", matKhau:"123456", soDienThoai:"09063372721", email:"123123@gmail.com", loaiNguoiDung:"Nhân viên"}],
     nguoiDungSua: {
         taiKhoan: '',
             hoTen: '',
@@ -41,8 +42,9 @@ export const BaiTapQuanLiNguoiDungReducer = (state = stateDefault, action) => {
             return {...state, mangThongTinNguoiDung:mangNguoiDungUpdate}
         }
         case DELETE_USERS:{
+            console.log("DELETE_USERS",action.type);
             let mangNguoiDungUpdate = [...state.mangThongTinNguoiDung]
-            mangNguoiDungUpdate = mangNguoiDungUpdate.filter( item => item.taiKhoan !== action.taiKhoan)
+            mangNguoiDungUpdate = mangNguoiDungUpdate.filter( item => item.taiKhoan !== action.value.taiKhoan)
             return {...state, mangThongTinNguoiDung: mangNguoiDungUpdate}
         }
         case EDIT_USERS:{

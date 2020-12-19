@@ -84,13 +84,13 @@ class FormDangKy extends Component {
 
                         <div className='col-6'>
                             <p>Tài Khoản</p>
-                            <input typeInput name="taiKhoan" value={taiKhoan} type='text' className='form-control' onChange={this.handleChangeInput}></input>
+                            <input typeInput='text' name="taiKhoan" value={taiKhoan} type='text' className='form-control' onChange={this.handleChangeInput}></input>
                             <p className='text-danger'>{this.props.nguoiDungRedux.errors.taiKhoan}</p>
                         </div>
 
                         <div className='col-6'>
                             <p>Họ tên</p>
-                            <input typeInput='text' name="hoTen" value={hoTen} type='text' className='form-control' onChange={this.handleChangeInput}></input>
+                            <input  name="hoTen" value={hoTen} type='text' className='form-control' onChange={this.handleChangeInput}></input>
                             <p className='text-danger'>{this.props.nguoiDungRedux.errors.hoTen}</p>
                         </div>
 

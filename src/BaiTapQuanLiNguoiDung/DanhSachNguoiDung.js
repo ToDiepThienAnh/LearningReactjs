@@ -1,14 +1,15 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import { createAction } from '../Redux/Action/action'
 // import { createAction } from '../Redux/Action/action'
 import { DELETE_USERS, EDIT_USERS } from '../Redux/Action/type'
-import * as Action from "../Redux/Action/action"
+
  class DanhSachNguoiDung extends Component {
 
     renderDanhSachNguoiDung = () => {
         return this.props.mangThongTinNguoiDung.map((value, index)=>{
             return <tr key={index}>
-            <td>{value.key}</td>
+            <td>{index + 1}</td>
             <td>{value.taiKhoan}</td>
             <td>{value.hoTen}</td>
             <td>{value.matKhau}</td>
@@ -16,13 +17,14 @@ import * as Action from "../Redux/Action/action"
             <td>{value.soDienThoai}</td>
             <td>{value.loaiNguoiDung}</td>
             <td>
-                <button className='btn btn-primary mr-1' onClick={ ()=> this.props.dispatch({
+                <button className='btn btn-primary mr-1' onClick={()=> this.props.dispatch({
                     type: EDIT_USERS,
                     value
                 })}>Chỉnh sửa</button>
-                <button className='btn btn-danger' onClick={() => {
-                    this.props.CreateAcTion(DELETE_USERS, value)
-                }}>Xóa</button>
+                <button className='btn btn-danger' onClick={() => this.props.dispatch({
+                    type: DELETE_USERS,
+                    value
+                })}>Xóa</button>
             </td>
         </tr>
         })
@@ -60,11 +62,5 @@ const mapStateToProps = (state) => {
         mangThongTinNguoiDung: state.BaiTapQuanLiNguoiDungReducer.mangThongTinNguoiDung
     }
 }
-const mapDispatchToProps = (dispatch) => {
-    return {
-        CreateAcTion:(type,payload) => {
-            dispatch(Action.createAction(type,payload))
-        }
-    }
-}
-export default connect(mapStateToProps,mapDispatchToProps)(DanhSachNguoiDung)
+
+export default connect(mapStateToProps)(DanhSachNguoiDung)
