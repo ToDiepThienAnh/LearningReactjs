@@ -1,18 +1,11 @@
  import './App.css';
-import BaiTapGameXucXac from './BaiTapRedux/BaiTapGameXucXac/BaiTapGameXucXac';
-import BaiTapGioHangRedux from './BaiTapRedux/BaiTapGioHangRedux/BaiTapGioHangRedux';
-import BaiTapDanhSachPhim from './Components/BaiTapDanhSachPhim/BaiTapDanhSachPhim';
-import BaiTapLLayout from './Components/BaiTapLayout/BaiTapLLayout';
-import DemoFunctionComponent from './Components/DemoFunctionComponent';
-import DemoReactClassComponent from './Components/DemoReactClassComponent';
-import DataBinding from './DataBinding/DataBinding';
-import BaiTapQuanLiSinhVien from './Form/BaiTapQuanLiSinhVien/BaiTapQuanLiSinhVien';
-import React_LifeCycle from './React_LifeCycle/React_LifeCycle';
+import BaiTapQuanLiNguoiDung from './BaiTapQuanLiNguoiDung/BaiTapQuanLiNguoiDung';
+
 
 function App() {
   return (
     <div className="App">
-        <BaiTapQuanLiSinhVien></BaiTapQuanLiSinhVien>
+        <BaiTapQuanLiNguoiDung></BaiTapQuanLiNguoiDung>
 
     </div>
   );
