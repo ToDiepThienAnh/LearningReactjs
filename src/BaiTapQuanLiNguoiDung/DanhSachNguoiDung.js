@@ -17,14 +17,8 @@ import { DELETE_USERS, EDIT_USERS } from '../Redux/Action/type'
             <td>{value.soDienThoai}</td>
             <td>{value.loaiNguoiDung}</td>
             <td>
-                <button className='btn btn-primary mr-1' onClick={()=> this.props.dispatch({
-                    type: EDIT_USERS,
-                    value
-                })}>Chỉnh sửa</button>
-                <button className='btn btn-danger' onClick={() => this.props.dispatch({
-                    type: DELETE_USERS,
-                    value
-                })}>Xóa</button>
+                <button className='btn btn-primary mr-1' onClick={()=> this.props.dispatch(createAction(EDIT_USERS, value))}>Chỉnh sửa</button>
+                <button className='btn btn-danger' onClick={() => this.props.dispatch(createAction(DELETE_USERS, value))}>Xóa</button>
             </td>
         </tr>
         })

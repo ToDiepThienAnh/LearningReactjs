@@ -44,14 +44,14 @@ export const BaiTapQuanLiNguoiDungReducer = (state = stateDefault, action) => {
         case DELETE_USERS:{
             console.log("DELETE_USERS",action.type);
             let mangNguoiDungUpdate = [...state.mangThongTinNguoiDung]
-            mangNguoiDungUpdate = mangNguoiDungUpdate.filter( item => item.taiKhoan !== action.value.taiKhoan)
+            mangNguoiDungUpdate = mangNguoiDungUpdate.filter( item => item.taiKhoan !== action.payload.taiKhoan)
             return {...state, mangThongTinNguoiDung: mangNguoiDungUpdate}
         }
         case EDIT_USERS:{
-            state.nguoiDungSua = {...action.value}
+            state.nguoiDungSua = {...action.payload}
 
             let newNguoiDung = {...state.nguoiDungRedux}
-            newNguoiDung.values = {...action.value}
+            newNguoiDung.values = {...action.payload}
             return {...state, nguoiDungRedux:newNguoiDung }
         }
         case UPDATE_USER:{

@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import { createAction } from '../Redux/Action/action';
 import { SET_USERS, SIGNUP_USERS, UPDATE_USER } from '../Redux/Action/type';
 
 
@@ -67,10 +68,7 @@ class FormDangKy extends Component {
             return ;
         } 
         //Xử lý submit => api hoặc redux (dispatch) ...
-        this.props.dispatch({
-            type: SIGNUP_USERS
-            
-        })
+        this.props.dispatch(createAction(SIGNUP_USERS, null))
     }
 
     render() {
@@ -123,10 +121,7 @@ class FormDangKy extends Component {
                     </div>
                     <div className='mt-2'>
                         <button type='submit' className='btn btn-success mr-2'>Đăng ký</button>
-                        <button onClick={ ()=> this.props.dispatch({
-                            type: UPDATE_USER
-
-                        })} type='button' className='btn btn-primary'>Cập nhật</button>
+                        <button onClick={ ()=> this.props.dispatch(createAction(UPDATE_USER, null))} type='button' className='btn btn-primary'>Cập nhật</button>
                     </div>
 
 
